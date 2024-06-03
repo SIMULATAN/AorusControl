@@ -22,6 +22,14 @@ func ReadInt16(file os.File, offset int64) (uint16, error) {
 	return binary.BigEndian.Uint16(b), nil
 }
 
+func ReadInt8(file os.File, offset int64) (int8, error) {
+	b, error := ReadByte(file, offset)
+	if error != nil {
+		return -1, error
+	}
+	return int8(b), nil;
+}
+
 func ReadBit(file os.File, offset int64, bit int8) (bool, error) {
 	byte, error := ReadByte(file, offset)
 	if error != nil {
