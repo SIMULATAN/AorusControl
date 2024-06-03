@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/binary"
 	"os"
 )
 
@@ -9,6 +10,16 @@ func ReadByte(file os.File, offset int64) (byte, error) {
 	b := make([]byte, 1)
 	_, error := file.Read(b)
 	return b[0], error
+}
+
+func ReadInt16(file os.File, offset int64) (uint16, error) {
+	file.Seek(offset, os.SEEK_SET)
+	b := make([]byte, 2)
+	_, error := file.Read(b)
+	if error != nil {
+		return 0, error
+	}
+	return binary.BigEndian.Uint16(b), nil
 }
 
 func ReadBit(file os.File, offset int64, bit int8) (bool, error) {
