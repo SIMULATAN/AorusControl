@@ -26,11 +26,23 @@ Download the latest release from the [releases page](https://github.com/SIMULATA
 
 Extract the `tar.gz` file and run the binary inside.
 
+### On Arch Linux
+If you are on Arch Linux, you can use the AUR package.
+It is called [aoruscontrol-bin](https://aur.archlinux.org/packages/aoruscontrol-bin/).
+
+Use your favorite AUR helper to install it, e.g.:
+```bash
+# using yay
+yay -S aoruscontrol-bin
+# using paru
+paru -S aoruscontrol-bin
+```
+
 ## Usage
 ```bash
-# from source
+# if you installed from source using `go install`
 aoruscontrol # make sure $GOPATH/bin is in your $PATH
-# from release
+# otherwise
 ./AorusControl
 ```
 Make sure to run the tool as root, as it needs to access `/sys/kernel/debug/ec/ec0/io`.
