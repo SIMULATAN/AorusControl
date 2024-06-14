@@ -7,9 +7,9 @@ import (
 )
 
 type Mode struct {
-	name string
+	name   string
 	offset int64
-	bit int8
+	bit    int8
 }
 
 var MODE_QUIET = Mode{
@@ -107,4 +107,3 @@ func GetCurrentMode(ec os.File) (Mode, int) {
 func (m Mode) ReadModeValue(ec os.File) (bool, error) {
 	return ReadBit(ec, m.offset, m.bit)
 }
-
