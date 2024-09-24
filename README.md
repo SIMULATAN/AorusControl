@@ -46,3 +46,7 @@ aoruscontrol # make sure $GOPATH/bin is in your $PATH
 ./AorusControl
 ```
 Make sure to run the tool as root, as it needs to access `/sys/kernel/debug/ec/ec0/io`.
+
+## Credits
+Massive thank you to [`@rcassani`](https://github.com/rcassani) for reverse engineering the Windows app and publishing bindings in the awesome [p37-ec-aorus15g](https://github.com/rcassani/p37-ec-aorus15g) repo.
+This project wouldn't be possible without his work.
